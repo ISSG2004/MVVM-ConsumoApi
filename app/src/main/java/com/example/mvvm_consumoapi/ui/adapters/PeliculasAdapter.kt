@@ -38,5 +38,9 @@ class PeliculasAdapter(var listaPeliculas: List<Pelicula>,
     override fun onBindViewHolder(holder: PeliViewHolder, position: Int) {
         holder.render(listaPeliculas[position],onItemClick)
     }
+    fun actualizarPeliculas(newList:List<Pelicula>){
+        listaPeliculas=newList
+        notifyDataSetChanged()
+    }
 
 }

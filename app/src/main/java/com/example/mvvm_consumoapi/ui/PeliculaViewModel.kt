@@ -14,18 +14,18 @@ class PeliculaViewModel:ViewModel() {
     private val _listadoPelis= MutableLiveData<List<Pelicula>>()
     val listadoPelis:LiveData<List<Pelicula>> = _listadoPelis
 
-    fun traerPopulares(){
-        viewModelScope.launch(Dispatchers.IO){ //lanzamos la funcion para traernos los datos de la API. SE lanza en un hilo secundario
+    fun traerPopulares() {
+        viewModelScope.launch(Dispatchers.IO) { //lanzamos la funcion para traernos los datos de la API. SE lanza en un hilo secundario
             val datos = repository.getPopulares()
             _listadoPelis.postValue(datos)
 
         }
-        fun traerCartelera(){
-            viewModelScope.launch(Dispatchers.IO){
-                val datos = repository.getCartelera()
-                _listadoPelis.postValue(datos)
-
-            }
+    }
+    fun traerCartelera(){
+        viewModelScope.launch(Dispatchers.IO){
+            val datos = repository.getCartelera()
+            _listadoPelis.postValue(datos)
         }
     }
+
 }
