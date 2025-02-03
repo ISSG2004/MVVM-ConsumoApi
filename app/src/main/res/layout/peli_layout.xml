@@ -14,7 +14,7 @@
         android:padding="4dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_caratula"
             android:layout_width="132dp"
             android:layout_height="200dp"
             android:layout_marginTop="4dp"
@@ -24,7 +24,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
-        <Circular
+
+        <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+            android:id="@+id/circularProgress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            app:direction="clockwise"
+            app:dotWidth="6dp"
+            app:fillBackground="true"
+            app:formattingPattern="%1.f"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:progressBackgroundColor="@color/white"
+            app:progressBackgroundStrokeWidth="3dp"
+            app:progressColor="#4CAF50"
+
+            app:textSize="14sp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
